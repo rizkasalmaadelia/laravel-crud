@@ -12,12 +12,12 @@ class CreateBukusTable extends Migration
     public function up()
     {
         Schema::create('bukus', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('judul');
-            $table->string('penerbit');
-            $table->integer('tahun_terbit');
-            $table->string('pengarang');
-            $table->timestamps();
+        $table->increments('id');
+        $table->string('judul');
+        $table->string('penerbit');
+        $table->string('tahun_terbit');
+        $table->string('pengarang');
+        $table->timestamps();
         });
     }
     /**

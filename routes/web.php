@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +9,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'MainController@home');
+Route::get('/create', function(){
+  return view('create');
 });
-
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('buku', 'BukuController');
+Route::post('/insert', 'MainController@add');
+Route::get('/update/{id}', 'MainController@update');
+Route::post('/edit/{id}', 'MainController@edit');
+Route::get('/view/{id}', 'MainController@view');
+Route::get('/delete/{id}', 'MainController@delete');
