@@ -31,11 +31,7 @@ class MainController extends Controller
       return redirect('')->with('info', 'Buku Baru Telah Ditambahkan');
     }
 
-    public function update($id)
-    {
-    	$buku = Buku::find($id);
-    	return view('update', ['buku' => $buku]);
-    }
+    
 
     public function edit(Request $request, $id)
     {
@@ -71,6 +67,12 @@ class MainController extends Controller
         return redirect('/')->with('info', 'Buku Sukses Dihapus!');
     }
     
-
+    public function update($id)
+    {
+        $buku = 
+        Buku::find($id);
+            return view('update',
+                ['buku' => $buku]);
+    }
     
 }
